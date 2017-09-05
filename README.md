@@ -1,4 +1,4 @@
-# caligari/city-router
+# treboada/city-router
 
 A composer package to interface CityRouter services.
 
