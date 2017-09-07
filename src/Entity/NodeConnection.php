@@ -18,7 +18,19 @@ class NodeConnection
 
     /**
      *
-     * @var NodeCost
+     * @var \DateTime
+     */
+    private $timestampA;
+
+    /**
+     *
+     * @var \DateTime
+     */
+    private $timestampB;
+
+    /**
+     *
+     * @var ConnectionCost
      */
     private $cost;
 
@@ -37,8 +49,9 @@ class NodeConnection
     }
 
     /**
+     * Getter.
      *
-     * @return NodeCost
+     * @return ConnectionCost
      */
     public function getCost()
     {
@@ -46,8 +59,9 @@ class NodeConnection
     }
 
     /**
+     * Setter.
      *
-     * @param NodeCost $cost
+     * @param ConnectionCost $cost
      * @return self
      */
     public function setCost($cost)
@@ -74,6 +88,65 @@ class NodeConnection
     public function getNodeB()
     {
         return $this->nodeB;
+    }
+
+    /**
+     * Getter.
+     *
+     * @return \DateTime
+     */
+    public function getTimestampA()
+    {
+        return $this->timestampA;
+    }
+
+    /**
+     * Setter.
+     *
+     * @param \DateTime $timestampA
+     * @return self
+     */
+    public function setTimestampA($timestampA)
+    {
+        $this->timestampA = $timestampA;
+        return $this;
+    }
+
+    /**
+     * Getter.
+     *
+     * @return \DateTime
+     */
+    public function getTimestampB()
+    {
+        return $this->timestampB;
+    }
+
+    /**
+     * Setter.
+     *
+     * @param \DateTime $timestampB
+     * @return self
+     */
+    public function setTimestampB($timestampB)
+    {
+        $this->timestampB = $timestampB;
+        return $this;
+    }
+
+    /**
+     * Returns if connection is possible at a moment.
+     *
+     * @param \DateTime $timestamp
+     *            The moment to test.
+     * @return boolean
+     */
+    public function isWithinWindow(\DateTime $timestamp)
+    {
+        $tsNode = $this->timestampA->getTimestamp();
+        $tsParam = $timestamp->getTimestamp();
+
+        return ($tsNode - $tsParam >= 0);
     }
 }
 

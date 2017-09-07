@@ -1,19 +1,19 @@
 <?php
 namespace Treboada\CityRouter\Entity;
 
-interface NodeCost
+interface ConnectionCost
 {
 
     /**
      *
-     * @param NodeCost $another
+     * @param ConnectionCost $another
      * @return bool
      */
     function equals($another);
 
     /**
      *
-     * @param NodeCost $another
+     * @param ConnectionCost $another
      * @return bool
      */
     function greaterThan($another);

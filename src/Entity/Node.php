@@ -12,15 +12,9 @@ class Node
 
     /**
      *
-     * @var float
+     * @var Location
      */
-    protected $latitude;
-
-    /**
-     *
-     * @var float
-     */
-    protected $longitude;
+    protected $location;
 
     /**
      *
@@ -32,9 +26,10 @@ class Node
     }
 
     /**
+     * Setter.
      *
      * @param int $id
-     * @return Treboada\\CityRouter\\Entity\\Node
+     * @return \Treboada\CityRouter\Entity\Node
      */
     public function setId($id)
     {
@@ -43,42 +38,24 @@ class Node
     }
 
     /**
+     * Getter.
      *
-     * @return float
+     * @return \Treboada\CityRouter\Entity\Location
      */
-    public function getLatitude()
+    public function getLocation()
     {
-        return $this->latitude;
+        return $this->location;
     }
 
     /**
+     * Setter.
      *
-     * @param float $latitude
-     * @return Treboada\\CityRouter\\Entity\\Node
+     * @param \Treboada\CityRouter\Entity\Location $location
+     * @return self
      */
-    public function setLatitude(float $latitude)
+    public function setLocation($location)
     {
-        $this->latitude = $latitude;
-        return $this;
-    }
-
-    /**
-     *
-     * @return float
-     */
-    public function getLongitude()
-    {
-        return $this->longitude;
-    }
-
-    /**
-     *
-     * @param float $longitude
-     * @return Treboada\\CityRouter\\Entity\\Node
-     */
-    public function setLongitude(float $longitude)
-    {
-        $this->longitude = $longitude;
+        $this->location = $location;
         return $this;
     }
 }
