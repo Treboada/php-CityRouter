@@ -12,7 +12,8 @@
     "repositories": [
         {
             "type": "vcs",
-            "url": "https://github.com/Treboada/php-CityRouter"
+            "url": "https://github.com/Treboada/php-CityRouter",
+            "name": "treboada/city-router"
         }
     ],
     "require": {
